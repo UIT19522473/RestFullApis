@@ -63,14 +63,11 @@ const conn = process.env.CONN ? process.env.CONN : "";
 
 try {
   mongoose
-    .connect(
-      "mongodb+srv://tuankapro156:123456tT@restapis.ldzna3d.mongodb.net/",
-      {
-        useNewUrlParser: true,
-        // useFindAndModify: false,
-        useUnifiedTopology: true,
-      }
-    )
+    .connect(conn, {
+      useNewUrlParser: true,
+      // useFindAndModify: false,
+      useUnifiedTopology: true,
+    })
     .then(console.log("connect successfully: " + conn))
     .then(
       app.listen(port, (req, res) => {
