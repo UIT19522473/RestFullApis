@@ -61,11 +61,14 @@ app.use("/api/account/", AccountRouter);
 const port = process.env.PORT ? process.env.PORT : 8080;
 try {
   mongoose
-    .connect(process.env.CONN, {
-      useNewUrlParser: true,
-      // useFindAndModify: false,
-      useUnifiedTopology: true,
-    })
+    .connect(
+      "mongodb+srv://tuankapro156:123456tT@restapis.ldzna3d.mongodb.net/",
+      {
+        useNewUrlParser: true,
+        // useFindAndModify: false,
+        useUnifiedTopology: true,
+      }
+    )
     .then(console.log("connect successfully"))
     .then(
       app.listen(port, (req, res) => {
