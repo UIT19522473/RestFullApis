@@ -63,12 +63,15 @@ const conn = process.env.CONN ? process.env.CONN : "";
 
 try {
   mongoose
-    .connect(conn, {
-      useNewUrlParser: true,
-      // useFindAndModify: false,
-      useUnifiedTopology: true,
-    })
-    .then(console.log("connect successfully"))
+    .connect(
+      "mongodb+srv://tuankapro156:123456tT@restapis.ldzna3d.mongodb.net/",
+      {
+        useNewUrlParser: true,
+        // useFindAndModify: false,
+        useUnifiedTopology: true,
+      }
+    )
+    .then(console.log("connect successfully: " + conn))
     .then(
       app.listen(port, (req, res) => {
         console.log(`server is runing at port: http://localhost:${port}`);
