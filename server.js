@@ -73,7 +73,8 @@ try {
       app.listen(port, (req, res) => {
         console.log(`server is runing at port: http://localhost:${port}`);
       })
-    );
+    )
+    .catch((err) => console.log(err));
 } catch (error) {
   console.log(error);
 }
